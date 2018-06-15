@@ -16,6 +16,7 @@ class App extends Component {
   }
 
   render() {
+    const {articles} = this.props // чтоб не писать много раз this.props
     const options = this.props.articles.map(article => ({
         label: article.title,
         value: article.id
@@ -28,8 +29,9 @@ class App extends Component {
                 onChange={this.changeSelection}
                 //multi = {true}
                 multi/>
-        <ArticleList articles = {this.props.articles }/>
-        <ArticlesChart articles = {this.props.articles }/>
+        {/*для того чтоб при рендере открыть статью передаем id нужной статьи*/}
+        <ArticleList articles = {articles } defaultOpenId = {articles[0].id}/>
+        <ArticlesChart articles = {articles }/>
       </div>
     )
   }

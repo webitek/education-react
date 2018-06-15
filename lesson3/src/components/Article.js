@@ -3,7 +3,9 @@ import {findDOMNode} from 'react-dom'
 import PropTypes from 'prop-types'
 import Comment from "./Comment";
 import CommentList from "./CommentList";
+import { CSSTransitionGroup } from 'react-transition-group'
 import toggleOpen from "../decoretors/toggleOpen"
+import './article.css'
 
 class Article extends Component {
     /**
@@ -47,7 +49,17 @@ class Article extends Component {
                 <button onClick = {toggleOpen}>
                     {isOpen ? 'close' : 'open'}
                 </button>
-                {this.getBody()}
+                {/*{this.getBody()}*/}
+                <CSSTransitionGroup
+                    transitionName="example"
+                    transitionAppear={true} // для анимированого появления по дефолту открытой статьи
+                    transitionAppearTimeout={500}
+                    transitionEnterTimeout={300} // react добавляет в реальный дом элем.
+                    transitionLeaveTimeout={500} // react убирает из реального дома элем.
+                    component = 'div' // by default CSSTransitionGroup обворчивает эл в span
+                >
+                    {this.getBody()}
+                </CSSTransitionGroup>
             </div>
         )
     }
@@ -62,7 +74,7 @@ class Article extends Component {
         const {article, isOpen} = this.props
         if(!isOpen) return null
         return (
-            <section>
+            <section className="section">
                 {article.text}
                 <CommentList comments={article.comments} ref = {this.setCommentsRef} />
             </section>
