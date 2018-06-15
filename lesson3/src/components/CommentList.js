@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Comment from './Comment'
+import CommentForm from './CommentForm'
 import toggleOpen from '../decoretors/toggleOpen'
 
 /**
@@ -31,9 +32,12 @@ function getBody({comments, isOpen}) {
     if(!isOpen) return null
     if(!comments.length) return <p>No comments yet</p>
     return (
+      <div>
         <ul>
-            {comments.map(comment =><li key={comment.id}><Comment comment={comment}/></li>)}
+          {comments.map(comment =><li key={comment.id}><Comment comment={comment}/></li>)}
         </ul>
+        <CommentForm/>
+      </div>
     )
 }
 
