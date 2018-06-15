@@ -1,11 +1,11 @@
 import React, {Component, PureComponent} from 'react'
 import {findDOMNode} from 'react-dom'
 import PropTypes from 'prop-types'
-import Comment from "./Comment";
-import CommentList from "./CommentList";
+import Comment from "../Comment";
+import CommentList from "../CommentList";
 import { CSSTransitionGroup } from 'react-transition-group'
-import toggleOpen from "../decoretors/toggleOpen"
-import './article.css'
+import toggleOpen from "../../decoretors/toggleOpen"
+import './style.css'
 
 class Article extends Component {
     /**

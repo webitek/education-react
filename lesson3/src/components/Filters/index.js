@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import DateRange from './DateRange'
 import SelectFilter from './Select'
 
+import './style.css'
+
 class Filtres extends Component {
   static propTypes = {
     articles: PropTypes.array
