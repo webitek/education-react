@@ -4,6 +4,9 @@
 # Git
 /.git
 
+#yarn
+**/yarn.lock
+
 # Node
 **/node_modules
 
