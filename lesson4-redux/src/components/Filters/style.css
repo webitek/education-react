@@ -1,0 +1,4 @@
+.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside){
+  border-radius: 0;
+  border: 1px solid;
+}

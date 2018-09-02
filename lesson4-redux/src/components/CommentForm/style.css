@@ -1,0 +1,12 @@
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+}
+input {
+  margin-bottom: 10px;
+  outline: none;
+}
+.form-input__error{
+  border: 1px solid red;
+}
