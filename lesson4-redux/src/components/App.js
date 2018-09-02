@@ -13,20 +13,19 @@ import Counter from './Counter';
 class App extends Component {
 
   render() {
-
-    const {articles} = this.props // чтоб не писать много раз this.props
-    const options = this.props.articles.map(article => ({
-      label: article.title,
-      value: article.id
-    }))
     return (
       <div>
         <Counter/>
         <UserForm/>
-        <Filters articles = {articles}/>
+        {/*читаем из store все статьи*/}
+        <Filters articles = {[]}/>
+        {/*читали из fixtuares*/}
+        {/*<Filters articles = {articles}/>*/}
+
+        {/*читаем из store все статьи*/}
+        <ArticleList/>
         {/*для того чтоб при рендере открыть статью передаем id нужной статьи*/}
-        <ArticleList articles={articles } defaultOpenId={articles[0].id}/>
-        <ArticlesChart articles={articles }/>
+        {/*<ArticleList articles={articles } defaultOpenId={articles[0].id}/>*/}
       </div>
     )
   }

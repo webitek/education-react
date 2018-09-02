@@ -8,6 +8,6 @@ const store = createStore(reducer)
  * для того чтоб в дев режиме могли увидеть
  * @type {Store<any & any, AnyAction> & any}
  */
-window.strore = store
+window.store = store
 
 export default store

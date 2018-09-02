@@ -2,27 +2,33 @@
     display: block;
 }
 .example-enter {
+    max-height: 1px;
     opacity: 0.01;
 }
 
 .example-enter.example-enter-active {
+    max-height: 9999px;
     opacity: 1;
-    transition: opacity 500ms ease-in;
+    transition: opacity 500ms ease-in, max-height 500ms ease-in;
 }
 
 .example-leave {
+    max-height: 9999px;
     opacity: 1;
 }
 
 .example-leave.example-leave-active {
+    max-height: 1px;
     opacity: 0.01;
-    transition: opacity 300ms ease-in;
+    transition: opacity 300ms ease-in, max-height 300ms ease-in;
 }
 .example-appear {
+    max-height: 1px;
     opacity: 0.01;
 }
 
 .example-appear.example-appear-active {
+    max-height: 9999px;
     opacity: 1;
-    transition: opacity .5s ease-in;
+    transition: opacity .5s ease-in, max-height .5s ease-in;
 }

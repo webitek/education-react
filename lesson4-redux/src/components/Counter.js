@@ -55,6 +55,10 @@ const mapToDispatch = {increment}
 const decorator = connect(mapStateToProps, mapToDispatch)
 export default decorator(Counter)*/
 
+
+/**
+ * connect() - связывает Store с react компонентами
+ */
 export default connect((state) => ({
   counter: state.count
 }), {increment, decrement})(Counter)
