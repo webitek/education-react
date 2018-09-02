@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux' // decorator redux-a для доступа в стор
-import {increment} from '../AC'
+import {increment, decrement} from '../AC'
 /**
  * В STORE РУКАМИ НЕ ЛЕЗЕМ!!!
  * import store from '../store'
@@ -20,6 +20,7 @@ class Counter extends Component {
       <div>
         <h2>{this.props.counter}</h2>
         <button onClick={this.handleIncrement}>Increment me</button>
+        <button onClick={this.handleDecrement}>Decrement me</button>
       </div>
     )
   }
@@ -38,6 +39,11 @@ class Counter extends Component {
     const {increment} = this.props
     increment()
   }
+  handleDecrement = () => {
+    console.log('handleDecrement');
+    const {decrement} = this.props
+    decrement()
+  }
 }
 
 /*function mapStateToProps(state) {
@@ -51,4 +57,4 @@ export default decorator(Counter)*/
 
 export default connect((state) => ({
   counter: state.count
-}), {increment})(Counter)
+}), {increment, decrement})(Counter)
